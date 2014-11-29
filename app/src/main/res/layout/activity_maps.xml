@@ -31,8 +31,8 @@
         android:layout_height="wrap_content"
         android:text="Guardar"
         android:id="@+id/button"
-        android:onClick="savePlace"
-        android:layout_below="@+id/map"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="savePlace" />
 
 </RelativeLayout>
