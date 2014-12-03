@@ -29,7 +29,7 @@
         <activity
             android:name="com.example.miguel.placestore.MapsActivity"
             android:label="@string/title_activity_maps"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,8 +37,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.miguel.placestore.Landing"
-            android:label="@string/title_activity_landing" >
+            android:name="com.example.miguel.placestore.viewPlaces"
+            android:label="@string/title_activity_view_places" >
         </activity>
     </application>
 

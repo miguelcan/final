@@ -1,6 +1,7 @@
 package com.example.miguel.placestore;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.Criteria;
 import android.location.Location;
@@ -11,6 +12,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.LocationListener;
@@ -133,13 +135,19 @@ public class MapsActivity extends FragmentActivity implements OnMapLongClickList
 
         // Get longitude of the current location
         double longitude = now.getPosition().longitude;
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = this.getSharedPreferences("PLACES",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        //editor.putString(placeName + "1",String.valueOf(latitude));
-        //editor.putString(placeName + "2",String.valueOf(longitude));
-        //editor.commit();
-System.out.println("LAT "+latitude);
+        editor.putString(placeName ,String.valueOf(latitude)+"/"+String.valueOf(longitude));
+        editor.commit();
+        place.setText("");
+        Toast.makeText(this, "Lugar Guardado! ", Toast.LENGTH_SHORT).show();
+        System.out.println("LAT "+latitude);
         System.out.println("LONG "+longitude);
+    }
+
+    public void listPlaces (View v) {
+        Intent intent = new Intent(this, viewPlaces.class);
+        startActivity(intent);
     }
 
   /*  @Override
