@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">PlaceStore</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps">PlaceStore</string>
     <string name="title_activity_landing">Landing</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>

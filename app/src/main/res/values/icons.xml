@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="random_icons">
+        <item>@drawable/mark_blood</item>
+        <item>@drawable/mark_blue</item>
+        <item>@drawable/mark_gray</item>
+        <item>@drawable/mark_green</item>
+        <item>@drawable/mark_light</item>
+        <item>@drawable/mark_olive</item>
+        <item>@drawable/mark_orange</item>
+        <item>@drawable/mark_purple</item>
+        <item>@drawable/mark_red</item>
+    </string-array>
+</resources>

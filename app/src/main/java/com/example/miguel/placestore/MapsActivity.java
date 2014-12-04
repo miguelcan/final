@@ -97,10 +97,10 @@ public class MapsActivity extends FragmentActivity implements OnMapLongClickList
         Criteria criteria = new Criteria();
 
         // Get the name of the best provider
-        String provider = locationManager.getBestProvider(criteria, true);
+        //String provider = locationManager.getBestProvider(criteria, true);
 
         // Get Current Location
-        Location myLocation = locationManager.getLastKnownLocation(provider);
+        Location myLocation = locationManager.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
 
         // set map type
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
@@ -150,69 +150,7 @@ public class MapsActivity extends FragmentActivity implements OnMapLongClickList
         startActivity(intent);
     }
 
-  /*  @Override
-    public void onLocationChanged(Location location) {
 
-        if(now != null){
-            now.remove();
-
-        }
-
-        //TextView tvLocation = (TextView) findViewById(R.id.tv_location);
-
-        // Getting latitude of the current location
-        double latitude = location.getLatitude();
-
-        // Getting longitude of the current location
-        double longitude = location.getLongitude();
-
-        // Creating a LatLng object for the current location
-        LatLng latLng = new LatLng(latitude, longitude);
-        now = googleMap.addMarker(new MarkerOptions().position(latLng));
-        // Showing the current location in Google Map
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-
-        // Zoom in the Google Map
-        googleMap.animateCamera(CameraUpdateFactory.zoomTo(15));
-
-    }
-
-    public void animateMarker(final Marker marker, final LatLng toPosition,
-                              final boolean hideMarker) {
-        final Handler handler = new Handler();
-        final long start = SystemClock.uptimeMillis();
-        Projection proj = mGoogleMapObject.getProjection();
-        Point startPoint = proj.toScreenLocation(marker.getPosition());
-        final LatLng startLatLng = proj.fromScreenLocation(startPoint);
-        final long duration = 500;
-
-        final Interpolator interpolator = new LinearInterpolator();
-
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                long elapsed = SystemClock.uptimeMillis() - start;
-                float t = interpolator.getInterpolation((float) elapsed
-                        / duration);
-                double lng = t * toPosition.longitude + (1 - t)
-                        * startLatLng.longitude;
-                double lat = t * toPosition.latitude + (1 - t)
-                        * startLatLng.latitude;
-                marker.setPosition(new LatLng(lat, lng));
-
-                if (t < 1.0) {
-                    // Post again 16ms later.
-                    handler.postDelayed(this, 16);
-                } else {
-                    if (hideMarker) {
-                        marker.setVisible(false);
-                    } else {
-                        marker.setVisible(true);
-                    }
-                }
-            }
-        });
-    }*/
 
     @Override
     public void onMarkerDrag(Marker arg0) {
